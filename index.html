@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Southern Agriculture Irrigation, LLC | Premium Wood Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-primary: #2C3E2D;
+            --color-secondary: #8B5A2B;
+            --color-accent: #D4AF37;
+            --color-text: #333333;
+            --color-text-light: #F9F9F9;
+            --color-bg-light: #FFFFFF;
+            --color-bg-off: #F4F4F1;
+            --color-overlay: rgba(20, 28, 20, 0.85);
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            --transition-std: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-hover: 0 20px 40px rgba(0,0,0,0.12);
+            --radius-std: 4px;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            line-height: 1.7;
+            background-color: var(--color-bg-light);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-std);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 42px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-std);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            border-color: var(--color-secondary);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--color-primary);
+            transition: var(--transition-std);
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before {
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            border-color: var(--color-primary);
+            color: #fff;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header .subtitle {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--color-secondary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-padding {
+            padding: 120px 0;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-text-light);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--color-secondary);
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(28, 41, 29, 0.95) 0%, rgba(44, 62, 45, 0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            color: var(--color-text-light);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--color-text-light);
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero h2 {
+            font-family: var(--font-body);
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 48px;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-btn-wrapper {
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .about {
+            background-color: var(--color-bg-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            height: 600px;
+            border-radius: var(--radius-std);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: var(--color-primary);
+        }
+
+        .about-text p {
+            margin-bottom: 24px;
+            color: #555;
+            font-size: 1.05rem;
+        }
+
+        .services {
+            background-color: var(--color-bg-off);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--color-bg-light);
+            padding: 48px 32px;
+            border-top: 4px solid var(--color-secondary);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-std);
+            position: relative;
+            top: 0;
+        }
+
+        .service-card:hover {
+            top: -10px;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 32px;
+            fill: var(--color-secondary);
+        }
+
+        .service-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--color-primary);
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .mission {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1534951474654-886e5639191f?q=80&w=2070&auto=format&fit=crop');
+            opacity: 0.1;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mission-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mission-header h2 {
+            color: var(--color-text-light);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 20px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        .mission-item {
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 30px;
+        }
+
+        .mission-item h4 {
+            color: var(--color-secondary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .mission-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+
+        .workflow {
+            background-color: var(--color-bg-light);
+        }
+
+        .workflow-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .workflow-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 100px;
+            right: 100px;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 30%;
+            background-color: var(--color-bg-light);
+            padding: 0 10px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-bg-off);
+            border: 2px solid var(--color-secondary);
+            color: var(--color-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            transition: var(--transition-std);
+        }
+
+        .step:hover .step-number {
+            background-color: var(--color-secondary);
+            color: var(--color-bg-light);
+        }
+
+        .step h4 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .footer-info {
+            display: flex;
+            gap: 60px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .info-value {
+            font-size: 1.1rem;
+            color: #fff;
+            font-family: var(--font-heading);
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 28, 20, 0.9);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-std);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background-color: var(--color-bg-light);
+            width: 100%;
+            max-width: 600px;
+            padding: 60px;
+            position: relative;
+            transform: translateY(50px);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: var(--color-secondary);
+        }
+
+        .modal-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .modal-title h3 {
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--color-bg-off);
+            border: 1px solid #e0e0e0;
+            border-radius: 0;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text);
+            transition: 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-secondary);
+            background-color: #fff;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(44, 62, 45, 0.1);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            margin-top: 20px;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .section-header h2 {
+                font-size: 3rem;
+            }
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .about-image {
+                height: 400px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+            .mission-item {
+                border-left: none;
+                padding-left: 0;
+                text-align: center;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                padding-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 80px 0;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .workflow-steps {
+                flex-direction: column;
+                gap: 50px;
+            }
+            .workflow-steps::before {
+                display: none;
+            }
+            .step {
+                width: 100%;
+            }
+            .footer-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .modal {
+                padding: 30px;
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">Southern <span>Ag</span> Irrigation</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Engineered Wood for<br>Agricultural Endurance</h1>
+                <h2>Delivering premium wood product solutions for irrigation infrastructure, structural farming needs, and industrial applications.</h2>
+                <div class="hero-btn-wrapper">
+                    <button class="btn btn-primary js-open-modal">Get a Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="main1.jpg" alt="Wood Manufacturing">
+                </div>
+                <div class="about-text">
+                    <span class="subtitle" style="display:block; text-transform:uppercase; color:var(--color-secondary); letter-spacing:2px; margin-bottom:10px; font-weight:600;">Who We Are</span>
+                    <h3>Rooted in Quality, Driven by Purpose</h3>
+                    <p>At Southern Agriculture Irrigation, LLC, we specialize in the intersection of robust wood manufacturing and agricultural necessity. Located in Pinetta, Florida, our facility transforms raw timber into essential structural components that support irrigation systems and farming logistics.</p>
+                    <p>We understand that agricultural environments are harsh and demanding. That is why our wood products are treated and processed to withstand humidity, soil contact, and heavy industrial use. From custom crating to structural supports for irrigation lines, our craftsmanship ensures longevity.</p>
+                    <p>Our philosophy is simple: sustainable sourcing combined with precision manufacturing creates products that farmers and industries can rely on for decades.</p>
+                    <button class="btn btn-outline js-open-modal" style="margin-top: 20px;">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding services">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Our Capabilities</span>
+                <h2>Specialized Production</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H7v-7h2V17z M13,17h-2V7h2V17z M17,17h-2v-4h2V17z"/>
+                    </svg>
+                    <h4>Irrigation Structural Supports</h4>
+                    <p>We manufacture heavy-duty wooden stakes, bracing, and support blocks specifically designed to stabilize above-ground irrigation piping. Our treated wood resists rot and water damage, ensuring the integrity of your water delivery systems in the field.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20,8h-3V4H3v16h18v-8H20z M5,6h10v2H5V6z M5,18v-2h10v2H5z M19,18h-2v-2h2V18z M19,14h-2v-2h2V14z"/>
+                    </svg>
+                    <h4>Custom Agricultural Crating</h4>
+                    <p>Secure your harvest and equipment with our bespoke crate and pallet solutions. We design wood packaging that optimizes airflow for produce while providing the structural rigidity needed for safe transport and heavy stacking.</p>
+                </div>
+                <div class="service-card">
+                    <svg class="service-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14,2H6C4.9,2,4,2.9,4,4v16c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8L14,2z M6,20V4h7v5h5v11H6z"/>
+                    </svg>
+                    <h4>Milled Timber Products</h4>
+                    <p>Beyond specialized supports, we offer precision milling for general agricultural construction. Whether you need fencing posts, barn siding, or utility poles, our facility delivers consistent dimensions and high-grade lumber.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding mission">
+        <div class="container mission-container">
+            <div class="section-header mission-header">
+                <span class="subtitle" style="color: rgba(255,255,255,0.7);">Why Choose Us</span>
+                <h2>The Southern Standard</h2>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-item">
+                    <h4>Precision Milling</h4>
+                    <p>Our facility utilizes advanced milling technology to ensure every piece of wood meets exact specifications. This reduces waste during installation and ensures a perfect fit for structural applications.</p>
+                </div>
+                <div class="mission-item">
+                    <h4>Material Durability</h4>
+                    <p>Understanding the Florida climate and agricultural demands, we select and treat wood species that offer superior resistance to pests, fungi, and moisture without compromising environmental safety.</p>
+                </div>
+                <div class="mission-item">
+                    <h4>Rapid Fulfillment</h4>
+                    <p>Agricultural timelines are tight. We maintain a streamlined inventory system and efficient production workflow to deliver your wood products exactly when the season demands them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding workflow">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">How We Work</span>
+                <h2>From Forest to Field</h2>
+            </div>
+            <div class="workflow-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h4>Sustainable Sourcing</h4>
+                    <p>We select premium raw timber from responsibly managed local forests, ensuring the highest grain quality for structural integrity.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h4>Precision Manufacturing</h4>
+                    <p>Raw materials are processed, cut, and treated in our Pinetta facility using industrial-grade saws and preservation techniques.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h4>Logistics & Delivery</h4>
+                    <p>Finished products are quality checked, bundled, and shipped directly to your agricultural site or distribution center.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Southern <span>Agriculture</span> Irrigation</div>
+                
+                <div class="footer-info">
+                    <div class="info-item">
+                        <span class="info-label">Visit Us</span>
+                        <span class="info-value">482 NE Fir St, 32350 Pinetta</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email Us</span>
+                        <a href="mailto:main@southernagricultureirrigation.pro" class="info-value">main@southernagricultureirrigation.pro</a>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary js-open-modal">Start a Project</button>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Southern Agriculture Irrigation, LLC. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal">
+            <button class="close-modal js-close-modal">&times;</button>
+            <div class="modal-title">
+                <h3>Contact Us</h3>
+                <p>Fill out the form below and we will get back to you via email.</p>
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" required placeholder="Tell us about your project needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+                <div class="success-message" id="successMessage">
+                    <strong>Thank you!</strong> Your message has been sent successfully.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('contactModal');
+            const openBtns = document.querySelectorAll('.js-open-modal');
+            const closeBtn = document.querySelector('.js-close-modal');
+            const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('successMessage');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            const toggleModal = (action) => {
+                if (action === 'open') {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                        form.reset();
+                        submitBtn.style.display = 'block';
+                    }, 500); 
+                }
+            };
+
+            openBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleModal('open');
+                });
+            });
+
+            closeBtn.addEventListener('click', () => toggleModal('close'));
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    toggleModal('close');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    toggleModal('close');
+                }
+            });
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    submitBtn.style.display = 'none';
+                    successMsg.style.display = 'block';
+                    
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
